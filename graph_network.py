@@ -87,7 +87,7 @@ class EncodeProcessDecode(snt.Module):
     #with self._enter_variable_scope():
     self._networks_builder()
 
-  def _build(self, input_graph: gn.graphs.GraphsTuple) -> tf.Tensor:
+  def __call__(self, input_graph: gn.graphs.GraphsTuple) -> tf.Tensor:
     """Forward pass of the learnable dynamics model."""
 
     # Encode the input_graph.

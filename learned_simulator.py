@@ -134,7 +134,7 @@ class LearnedSimulator(snt.Module):
     normalized_velocity_sequence = (
         velocity_sequence - velocity_stats.mean) / velocity_stats.std
 
-    flat_velocity_sequence = snt.MergeDims(start=1, size=2)(
+    flat_velocity_sequence = snt.Flatten()(
         normalized_velocity_sequence)
     node_features.append(flat_velocity_sequence)
 
